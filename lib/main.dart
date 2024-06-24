@@ -1,4 +1,4 @@
-import 'package:communityapp/Constants/Gradient_Border_Screen.dart';
+import 'package:communityapp/Screens.dart/Join_now.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,19 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: Column(children: [
-          SizedBox(
-            height: 200,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 38.0),
-            child: GradientBorderScreen(
-              child: Text("data"),
-            ),
-          )
-        ]),
-      ),
+      home:
+          const Scaffold(backgroundColor: Colors.white, body: JoinNowScreen()),
     );
   }
 }
