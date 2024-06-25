@@ -1,5 +1,8 @@
+// ignore_for_file: unused_field
+
 import 'package:communityapp/Constants/Gradient_Border.dart';
 import 'package:communityapp/Screens.dart/Create_account.dart';
+import 'package:communityapp/Screens.dart/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -26,7 +29,7 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
             height: height * 0.15,
           ),
           SizedBox(
-              width: width / 1,
+              width: width /1,
               child: Image.asset("assets/images/join_now.png")),
           SizedBox(
             height: height * 0.13,
@@ -82,7 +85,11 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
           Padding(
             padding: EdgeInsets.only(left: width * 0.13, right: width * 0.13),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const LoginScreen();
+                },));
+              },
               child: Container(
                 height: 60.0,
                 width: width * 0.7,
@@ -98,9 +105,9 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
                           fontSize: width * 0.06,
                           fontWeight: FontWeight.w500,
                         ),
-                        colors: [
-                          const Color(0xFF190482),
-                          const Color(0xff7752FE),
+                        colors: const [
+                           const Color(0xFF190482),
+                           const Color(0xff7752FE),
                         ],
                       ),
                     ),
