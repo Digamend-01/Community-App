@@ -1,4 +1,5 @@
 import 'package:communityapp/Constants/Gradient_Border.dart';
+import 'package:communityapp/Screens.dart/Create_account.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -11,12 +12,6 @@ class JoinNowScreen extends StatefulWidget {
 }
 
 class _JoinNowScreenState extends State<JoinNowScreen> {
-  final LinearGradient _gradient = const LinearGradient(
-    colors: <Color>[
-      Color(0xFF190482),
-      Color(0xff7752FE),
-    ],
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +31,14 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
           SizedBox(
             height: height * 0.13,
           ),
-          GestureDetector(
-            onTap: () {},
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const CreateAccountScreen();
+                },
+              ));
+            },
             child: Container(
               width: width * 0.7,
               height: 60,
@@ -84,7 +85,7 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
               onTap: () {},
               child: Container(
                 height: 60.0,
-                width: width*0.7,
+                width: width * 0.7,
                 decoration: gradientDecoration,
                 child: Padding(
                   padding: const EdgeInsets.all(1.8),
@@ -98,8 +99,8 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                         colors: [
-                          Color(0xFF190482),
-                          Color(0xff7752FE),
+                          const Color(0xFF190482),
+                          const Color(0xff7752FE),
                         ],
                       ),
                     ),
