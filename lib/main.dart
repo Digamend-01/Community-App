@@ -1,4 +1,4 @@
-import 'package:communityapp/Screens.dart/Join_now.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Join_now.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,8 +1,8 @@
 // ignore_for_file: unused_field
 
 import 'package:communityapp/Constants/Gradient_Border.dart';
-import 'package:communityapp/Screens.dart/Create_account.dart';
-import 'package:communityapp/Screens.dart/Login.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Create_account.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
