@@ -1,7 +1,10 @@
 import 'package:communityapp/Constants/Gradient_Border.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Join_now.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -199,25 +202,125 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         TextSpan(
                             text: "terms & services",
                             style: GoogleFonts.josefinSans(
-                                color: Color(0xFF190482),
+                                color: const Color(0xFF190482),
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
                                 decoration: TextDecoration.underline),
-                            recognizer: TapGestureRecognizer()..onTap = () {}),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            GradientText(
+                                              "Terms & Conditions",
+                                              colors: const [
+                                                Color(0xFF190482),
+                                                Color(0xff7752FE),
+                                              ],
+                                              style: GoogleFonts.josefinSans(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: width / 40,
+                                            ),
+                                            IconButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                icon: Container(
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(100),
+                                                        border: Border.all(
+                                                            color:
+                                                                Colors.black)),
+                                                    child: const Icon(
+                                                        Icons.close_rounded)))
+                                          ],
+                                        ),
+                                      ),
+                                      content: const Text(
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. "),
+                                    );
+                                  },
+                                );
+                              }),
                         TextSpan(
-                            text: " and ",
-                            style: GoogleFonts.josefinSans(
-                                fontSize: 16,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                            recognizer: TapGestureRecognizer()..onTap = () {}),
+                          text: " and ",
+                          style: GoogleFonts.josefinSans(
+                              fontSize: 16,
+                              color: const Color.fromARGB(255, 0, 0, 0)),
+                        ),
                         TextSpan(
                             text: "privacy policy",
                             style: GoogleFonts.josefinSans(
-                                color: Color(0xFF190482),
+                                color: const Color(0xFF190482),
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
                                 decoration: TextDecoration.underline),
-                            recognizer: TapGestureRecognizer()..onTap = () {}),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      title: Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            GradientText(
+                                              "Privacy Policy",
+                                              colors: const [
+                                                Color(0xFF190482),
+                                                Color(0xff7752FE),
+                                              ],
+                                              style: GoogleFonts.josefinSans(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: width / 16,
+                                            ),
+                                            IconButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                icon: Container(
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(100),
+                                                        border: Border.all(
+                                                            color:
+                                                                Colors.black)),
+                                                    child: const Icon(
+                                                        Icons.close_rounded)))
+                                          ],
+                                        ),
+                                      ),
+                                      content: const Text(
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in."),
+                                    );
+                                  },
+                                );
+                              }),
                       ])),
                     ],
                   )
@@ -267,11 +370,20 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 "Already have an account",
                 style: GoogleFonts.josefinSans(),
               ),
-              Text(
-                "Log In",
-                style: GoogleFonts.josefinSans(
-                    color: Color(0xff190482),
-                    decoration: TextDecoration.underline),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return const LoginScreen();
+                    },
+                  ));
+                },
+                child: Text(
+                  "Log In",
+                  style: GoogleFonts.josefinSans(
+                      color: const Color(0xff190482),
+                      decoration: TextDecoration.underline),
+                ),
               )
             ],
           ),

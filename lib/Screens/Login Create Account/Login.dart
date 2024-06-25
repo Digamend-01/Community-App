@@ -1,7 +1,9 @@
 import 'package:communityapp/Constants/Gradient_Border.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/Create_account.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -34,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Log In",
                     style: GoogleFonts.josefinSans(
-                      color: Color(0xff4A4A4A),
+                      color: const Color(0xff4A4A4A),
                       fontSize: 32,
                       fontWeight: FontWeight.w500,
                     ),
@@ -60,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             border: InputBorder.none,
                             hintText: "Email ID",
                             hintStyle: GoogleFonts.josefinSans(
-                              color: Color(0xff9D9898),
+                              color: const Color(0xff9D9898),
                               fontSize: width * 0.04,
                               fontWeight: FontWeight.w300,
                             ),
@@ -92,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           border: InputBorder.none,
                           hintText: "Password",
                           hintStyle: GoogleFonts.josefinSans(
-                            color: Color(0xff9D9898),
+                            color: const Color(0xff9D9898),
                             fontSize: width * 0.04,
                             fontWeight: FontWeight.w300,
                           ),
@@ -108,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               icon: Icon(_isObscure
                                   ? Icons.visibility
                                   : Icons.visibility_off),
-                              color: Color.fromARGB(255, 131, 123, 123),
+                              color: const Color.fromARGB(255, 131, 123, 123),
                               onPressed: () {
                                 setState(() {
                                   _isObscure = !_isObscure;
@@ -126,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Forgot Password ?",
                     style: GoogleFonts.josefinSans(
-                      color: Color(0xff383838),
+                      color: const Color(0xff383838),
                       fontSize: width * 0.04,
                       fontWeight: FontWeight.w400,
                     ),
@@ -140,17 +142,65 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextSpan(
                       text: 'terms & conditions ',
                       style: GoogleFonts.josefinSans(
-                        color: Color(0xff190482),
+                        color: const Color(0xff190482),
                         fontSize: 16,
                         decoration: TextDecoration.underline,
                         fontWeight: FontWeight.w400,
                       ),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                backgroundColor: Colors.white,
+                                title: Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      GradientText(
+                                        "Terms & Conditions",
+                                        colors: const [
+                                          Color(0xFF190482),
+                                          Color(0xff7752FE),
+                                        ],
+                                        style: GoogleFonts.josefinSans(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: width / 40,
+                                      ),
+                                      IconButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          icon: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
+                                                  border: Border.all(
+                                                      color: Colors.black)),
+                                              child: const Icon(
+                                                  Icons.close_rounded)))
+                                    ],
+                                  ),
+                                ),
+                                content: const Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. "),
+                              );
+                            },
+                          );
+                        },
                     ),
                     TextSpan(
                       text: 'and',
                       style: GoogleFonts.josefinSans(
-                        color: Color(0xff383838),
+                        color: const Color(0xff383838),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
@@ -158,17 +208,67 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextSpan(
                       text: ' privacy policy',
                       style: GoogleFonts.josefinSans(
-                        color: Color(0xff190482),
+                        color: const Color(0xff190482),
                         fontSize: 16,
                         decoration: TextDecoration.underline,
                         fontWeight: FontWeight.w400,
                       ),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                backgroundColor: Colors.white,
+                                title: Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      GradientText(
+                                        "Privacy Policy",
+                                        colors: const [
+                                          Color(0xFF190482),
+                                          Color(0xff7752FE),
+                                        ],
+                                        style: GoogleFonts.josefinSans(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: width / 16,
+                                      ),
+                                      IconButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          icon: Container(
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
+                                                  border: Border.all(
+                                                      color: Colors.black)),
+                                              child: const Icon(
+                                                  Icons.close_rounded)))
+                                    ],
+                                  ),
+                                ),
+                                content: const Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in."),
+                              );
+                            },
+                          );
+                        },
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: height*0.01,),
+              SizedBox(
+                height: height * 0.01,
+              ),
               GestureDetector(
                 onTap: () {},
                 child: Container(
@@ -205,7 +305,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Don’t have an account",
                     style: GoogleFonts.josefinSans(
-                      color: Color(0xff383838),
+                      color: const Color(0xff383838),
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -214,11 +314,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: height * 0.03,
               ),
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return CreateAccountScreen();
+                      },
+                    ));
+                  },
                   child: Text(
                     "Join Now",
                     style: GoogleFonts.josefinSans(
-                      color: Color(0xff190482),
+                      color: const Color(0xff190482),
                       fontSize: 16,
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.w400,
