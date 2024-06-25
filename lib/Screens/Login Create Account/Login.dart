@@ -1,5 +1,6 @@
 import 'package:communityapp/Constants/Gradient_Border.dart';
 import 'package:communityapp/Screens/Login%20Create%20Account/Create_account.dart';
+import 'package:communityapp/Screens/Login%20Create%20Account/forgot_password.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -124,7 +125,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: height * 0.02,
               ),
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const ForgotPassword();
+                },
+              ));
+                  },
                   child: Text(
                     "Forgot Password ?",
                     style: GoogleFonts.josefinSans(
