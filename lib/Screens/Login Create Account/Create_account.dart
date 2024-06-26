@@ -1,5 +1,4 @@
 import 'package:communityapp/Constants/Gradient_Border.dart';
-import 'package:communityapp/Screens/Login%20Create%20Account/Join_now.dart';
 import 'package:communityapp/Screens/Login%20Create%20Account/Login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
