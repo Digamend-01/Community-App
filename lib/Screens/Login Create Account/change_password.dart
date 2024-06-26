@@ -69,7 +69,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                               icon: Icon(newpasswordvisibility
                                   ? Icons.visibility
                                   : Icons.visibility_off),
-                              color: Color.fromARGB(255, 131, 123, 123),
+                              color: const Color.fromARGB(255, 131, 123, 123),
                               onPressed: () {
                                 setState(() {
                                   newpasswordvisibility = !newpasswordvisibility;
@@ -113,7 +113,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                               icon: Icon(confirmpasswordvisibility
                                   ? Icons.visibility
                                   : Icons.visibility_off),
-                              color: Color.fromARGB(255, 131, 123, 123),
+                              color: const Color.fromARGB(255, 131, 123, 123),
                               onPressed: () {
                                 setState(() {
                                   confirmpasswordvisibility = !confirmpasswordvisibility;
@@ -128,11 +128,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             ),
             GestureDetector(
               onTap: () {
-                 Navigator.push(context, MaterialPageRoute(
-                builder: (context) {
-                  return const ChangePassword();
-                },
-              ));
+                 
               },
               child: Container(
                 width: width * 0.75,
