@@ -18,7 +18,8 @@ class CreateAccountScreen extends StatefulWidget {
 }
 
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
-  final apiUrl = "https://community-app-3.onrender.com/v1/api/accounts/createAccount";
+  final apiUrl =
+      "https://community-app-3.onrender.com/v1/api/accounts/createAccount";
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -33,14 +34,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         context: context,
         builder: (context) {
           return const AlertDialog(
-            content: Text("You must accept the terms and conditions to create an account."),
+            content: Text(
+                "You must accept the terms and conditions to create an account."),
           );
         },
       );
       return;
     }
 
-    var response = await http.post(Uri.parse(apiUrl),
+    var response = await http.post(
+      Uri.parse(apiUrl),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "firstName": firstNameController.text,
@@ -93,7 +96,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 SizedBox(
                   height: height / 7,
                 ),
-                Text("Create Account",
+                Text(
+                  "Create Account",
                   style: GoogleFonts.josefinSans(
                     fontSize: 32,
                     fontWeight: FontWeight.w500,
@@ -120,11 +124,40 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 SizedBox(
                   height: height / 45,
                 ),
-                _buildTextField(
-                  controller: emailController,
-                  hintText: "Email ID",
-                  context: context,
-                  width: width,
+                Container(
+                  height: 60.0,
+                  width: width * 0.75,
+                  decoration: gradientDecoration,
+                  child: Padding(
+                    padding: const EdgeInsets.all(1.8),
+                    child: Container(
+                      decoration: innerGradientDecoration,
+                      child: TextFormField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Email ID",
+                          hintStyle: GoogleFonts.josefinSans(
+                            color: const Color(0xff9D9898),
+                            fontSize: width * 0.04,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).cardColor,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).cardColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: height / 45,
@@ -359,9 +392,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               suffixIcon: IconButton(
                 onPressed: togglePasswordVisibility,
-                icon: Icon(passwordVisibility
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+                icon: Icon(
+                  passwordVisibility ? Icons.visibility : Icons.visibility_off,
                 ),
               ),
             ),
@@ -371,7 +403,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
-  void _showDialog(BuildContext context, double width, String title, String content) {
+  void _showDialog(
+      BuildContext context, double width, String title, String content) {
     showDialog(
       context: context,
       builder: (context) {
