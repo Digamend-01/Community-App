@@ -18,7 +18,8 @@ class CreateAccountScreen extends StatefulWidget {
 }
 
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
-  final apiUrl = "https://community-app-3.onrender.com/v1/api/accounts/createAccount";
+  final apiUrl =
+      "https://community-app-3.onrender.com/v1/api/accounts/createAccount";
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -33,14 +34,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         context: context,
         builder: (context) {
           return const AlertDialog(
-            content: Text("You must accept the terms and conditions to create an account."),
+            content: Text(
+                "You must accept the terms and conditions to create an account."),
           );
         },
       );
       return;
     }
 
-    var response = await http.post(Uri.parse(apiUrl),
+    var response = await http.post(
+      Uri.parse(apiUrl),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "firstName": firstNameController.text,
@@ -93,7 +96,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 SizedBox(
                   height: height / 7,
                 ),
-                Text("Create Account",
+                Text(
+                  "Create Account",
                   style: GoogleFonts.josefinSans(
                     fontSize: 32,
                     fontWeight: FontWeight.w500,
@@ -149,6 +153,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   children: [
                     Checkbox(
                       value: termsAccepted,
+                      activeColor: Color(0xff190482),
                       onChanged: (value) {
                         setState(() {
                           termsAccepted = value ?? false;
@@ -359,9 +364,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               suffixIcon: IconButton(
                 onPressed: togglePasswordVisibility,
-                icon: Icon(passwordVisibility
-                  ? Icons.visibility
-                  : Icons.visibility_off,
+                icon: Icon(
+                  passwordVisibility ? Icons.visibility : Icons.visibility_off,
                 ),
               ),
             ),
@@ -371,7 +375,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     );
   }
 
-  void _showDialog(BuildContext context, double width, String title, String content) {
+  void _showDialog(
+      BuildContext context, double width, String title, String content) {
     showDialog(
       context: context,
       builder: (context) {
