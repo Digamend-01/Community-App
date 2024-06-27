@@ -182,6 +182,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   children: [
                     Checkbox(
                       value: termsAccepted,
+                      activeColor: Color(0xff190482),
                       onChanged: (value) {
                         setState(() {
                           termsAccepted = value ?? false;
